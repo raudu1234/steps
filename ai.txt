@@ -1,0 +1,44 @@
+artificial intelligence
+machine learning
+deep learning
+generative ai
+
+
+
+course outline
+_______________
+ai foundation
+machine learning foundation
+deep learning foundation
+gen ai and llm foundation
+
+oracle ai stack
+oracle generative ai services
+oracle ai services
+
+https://mylearn.oracle.com/ou/course/oracle-cloud-infrastructure-ai-foundations/147805/223411https://education.oracle.com/racetocerttesting?path=afterActivation (previous link)
+
+objectives
+explain artificial intelligence concept
+describe common ai domains and tasks
+differentiate between artificial intelligence machine learning , and deep learning
+
+ai terminology 
+machine learning
+deep learning
+data science
+
+commonly used ai modules
+language 
+audio and  speech
+vision
+
+
+
+Generative ai task
+create story ,poem etc
+summarize text
+answer questions
+generate image captions
+complete text
+convert text to speeech

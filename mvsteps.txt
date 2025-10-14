@@ -1,0 +1,84 @@
+ma'am if we clean then all file folders will deleted
+
+ma'am can i get history of command
+Id CommandLine
+  -- -----------
+   1 try { . "c:\Users\User\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } ca... 
+   2 mvn archetype:generate
+   3 ls
+   4 cd .\nameOf_project\
+   5 mvn validate
+   6 mvn compile
+   7 mvn test
+   8 mvn package
+   9 mvn varify
+  10 mvn verify
+  11 mvn install
+  12 mvn site
+
+
+xepdb1
+
+
+
+description
+restricted where this project can be run
+slave1
+
+GIT
+URL
+MASTER
+BUILD STEP:SHELL
+JAVAC tST.JAVA
+JAVA tEST.java
+apply save
+build now
+------------------
+
+no.of xecute :2
+remote root director:pwd n instace copy here
+labels:s1
+
+lunch ssh
+copy public ip and pest as host
+jenkin credential
+ssh username private key
+id:02
+description:slave2
+ubuntu
+enter directory
+open keypar and copy pest here the content
+add
+host key verification strategy none
+keep this in availability zone
+apply
+save
+slave2 open
+log
+--------------------------------------------------
+
+Jenkins
+new item
+maven project slave2
+maven project
+ok
+description give(implementating maven project using maven job in slave2
+restricted 
+slave2 write
+git
+url
+master
+goal and option :package
+apply save
+build now
+click on progress build
+
+now ls in instance
+cd mvnproject
+ls
+cd target
+ls
+
+
+
+

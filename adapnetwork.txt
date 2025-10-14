@@ -1,0 +1,142 @@
+Thanks for sharing the output. Here's a **summary of what's going wrong** and how to fix it:
+
+---
+
+## ⚠️ Problem: Ethernet Showing "Unidentified Network"
+
+The Ethernet adapter (`Realtek PCIe GbE Family Controller`) has this issue:
+
+* **IP Address**: `169.254.13.36`
+* **Subnet Mask**: `255.255.0.0`
+* **Default Gateway**: `None (just link-local IPv6 addresses)`
+* **DHCP**: Enabled
+
+This means your **Ethernet connection failed to obtain an IP address** from the router/DHCP server and instead assigned itself an **APIPA** address (`169.254.x.x`), which **cannot access the internet or local network** — hence "Unidentified Network".
+
+---
+
+## ✅ Fix It Step-by-Step
+
+### 🔌 1. **Check Physical Connection**
+
+* Ensure Ethernet cable is properly connected to:
+
+  * Your computer's Ethernet port
+  * Your router/switch/modem
+* Try a different port or cable if available
+
+---
+
+### 🔄 2. **Disable & Re-enable Ethernet Adapter**
+
+In **Network Connections**:
+
+1. Press `Win + R`, type `ncpa.cpl`, hit Enter
+2. Right-click **Ethernet** > **Disable**
+3. Wait 5 seconds, then **Enable**
+
+---
+
+### 💻 3. **Release & Renew IP**
+
+Open **Command Prompt as Administrator**:
+
+```cmd
+ipconfig /release
+ipconfig /renew
+```
+
+Then check IP again:
+
+```cmd
+ipconfig /all
+```
+
+---
+
+### 🔄 4. **Reset Network Settings**
+
+Still not working? Run:
+
+```cmd
+netsh winsock reset
+netsh int ip reset
+ipconfig /flushdns
+```
+
+Then **restart your computer**.
+
+---
+
+### 🧰 5. **Update Ethernet Driver**
+
+1. Open **Device Manager** (`Win + X > Device Manager`)
+2. Expand **Network Adapters**
+3. Right-click **Realtek PCIe GbE Family Controller** > **Update driver**
+4. Choose **Search automatically**
+
+Or try uninstalling the device and reboot — it will reinstall automatically.
+
+---
+
+### ⚙️ 6. **Set a Static IP (Test Only)**
+
+To test if your Ethernet adapter can communicate manually:
+
+1. Go to `ncpa.cpl`
+2. Right-click **Ethernet > Properties**
+3. Double-click **Internet Protocol Version 4 (TCP/IPv4)**
+4. Select:
+
+   * `Use the following IP address`
+
+     * IP: `192.168.1.100`
+     * Subnet: `255.255.255.0`
+     * Gateway: `192.168.1.1`
+   * DNS: `8.8.8.8`, `8.8.4.4`
+
+🔁 If this gives you internet, the issue is with DHCP — likely from the router.
+
+---
+
+### 🌐 7. **Check Router/Modem**
+
+If other devices on your network (like your phone or laptop) can use Ethernet or Wi-Fi with no issue, your PC is the problem.
+
+But if **nothing is getting IPs**, **restart your router**.
+
+---
+
+## 🧪 Bonus: Working Wi-Fi Confirms It's Ethernet-Specific
+
+Your Wi-Fi adapter **is working perfectly**:
+
+* IP: `10.84.75.66`
+* Gateway: `10.84.75.94`
+* DNS is resolving
+* Internet is functional
+
+➡️ So the issue is **isolated to the Ethernet interface** — **not a general network or system problem**.
+
+---
+
+## ✅ Summary
+
+| Problem                   | Status         |
+| ------------------------- | -------------- |
+| Ethernet IP (169.254.x.x) | ❌ Not valid    |
+| DHCP Server Response      | ❌ Not received |
+| Wi-Fi Working             | ✅ Yes          |
+| Internet via Ethernet     | ❌ No           |
+
+---
+
+## Let Me Know
+
+If you'd like, you can:
+
+* Share the results of `ipconfig /all` after trying the above
+* Tell me if you’re using **VirtualBox**, which may interfere with networking
+* Or let me know if you want help resetting **VirtualBox Host-Only Adapter settings**
+
+Let me know how it goes 👨‍🔧
